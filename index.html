@@ -15,17 +15,20 @@
             --text-muted: #94a3b8;
             --border: #334155;
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
             background-color: var(--bg-dark);
             color: var(--text-main);
             line-height: 1.6;
         }
+
         header {
             background-color: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(10px);
@@ -34,6 +37,7 @@
             top: 0;
             z-index: 100;
         }
+
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -42,63 +46,290 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             font-size: 1.6rem;
             font-weight: 800;
             background: linear-gradient(135deg, #818cf8, #34d399);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            margin-left: 1rem;
             text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
         }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
         .hero {
-            padding: 4rem 1rem;
+            background: radial-gradient(circle at center, #1e1b4b 0%, var(--bg-dark) 100%);
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+            padding: 6rem 2rem;
+            border-bottom: 1px solid var(--border);
         }
-        .hero h1 {
-            font-size: 2.5rem;
+
+        .motivational-quote {
+            font-size: 1.1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
             margin-bottom: 1rem;
         }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.2;
+        }
+
         .hero p {
+            font-size: 1.25rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
-            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .form-card {
+
+        .contact-banner {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+        }
+
+        .contact-banner strong {
+            color: var(--text-main);
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-success {
+            background-color: var(--accent);
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-success:hover {
+            background-color: #059669;
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
             background-color: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 2.5rem;
-            text-align: left;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .form-card input, .form-card textarea {
-            width: 100%;
-            padding: 0.75rem;
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            color: var(--text-main);
             margin-bottom: 1rem;
-            background-color: #0f172a;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .about-box {
+            background-color: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 6px;
-            color: #fff;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .form-card textarea {
-            resize: vertical;
-            min-height: 100px;
+
+        .about-box ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+            color: var(--text-muted);
         }
-        .form-card button {
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
             width: 100%;
-            padding: 0.75rem;
-            background-color: var(--accent);
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
+            padding: 0.8rem 1rem;
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 1rem;
         }
-        .form-card button:hover {
-            background-color: #059669;
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .price-store {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin: 1.2rem 0;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item h4 {
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 12px;
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            margin: auto;
+        }
+
+        .modal-content h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .close-btn {
+            background: #ef4444;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            background-color: #090d16;
+            border-top: 1px solid var(--border);
+            padding: 4rem 2rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .footer-content div {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-content h4 {
+            margin-bottom: 1.2rem;
+            color: var(--accent);
+        }
+
+        .footer-content p, .footer-content a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-content a:hover {
+            color: var(--text-main);
         }
     </style>
 </head>
@@ -106,33 +337,474 @@
 
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">Docente Elves Alfredo Armindo</a>
+            <div class="logo">MarketingPro</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#course">Free Course</a>
+                <a href="#store">Store ($1)</a>
+                <a href="#followers">Get Followers</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
     </header>
 
     <section class="hero">
-        <h1>Domine o Marketing Moderno</h1>
-        <p>Inscreva-se abaixo para garantir sua vaga e receber todas as novidades diretamente no seu e-mail.</p>
+        <div class="motivational-quote">"Success in digital marketing is not about luck; it is about strategy, consistency, and relentless execution."</div>
+        <h1>Master Digital Marketing with Instructor Elves Alfredo Armindo</h1>
+        <p>Join our 100% free course with official opening scheduled for <strong>November 20, 2026, at 5:00 PM</strong>.</p>
         
-        <div class="form-card">
-            <h3 style="margin-bottom: 1.5rem; text-align: center;">Faça sua Inscrição</h3>
-            
-            <form action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value="648f48b9-c0f6-4e20-a83b-91e4e6b6ec42">
-              
-              <label style="display:block; margin-bottom:0.5rem; font-size:0.9rem; color:var(--text-muted);">Seu Nome</label>
-              <input type="text" name="name" placeholder="Digite seu nome completo" required>
-              
-              <label style="display:block; margin-bottom:0.5rem; font-size:0.9rem; color:var(--text-muted);">Seu E-mail</label>
-              <input type="email" name="email" placeholder="seu@email.com" required>
-              
-              <label style="display:block; margin-bottom:0.5rem; font-size:0.9rem; color:var(--text-muted);">Mensagem ou Dúvida</label>
-              <textarea name="message" placeholder="Escreva sua mensagem..." required></textarea>
-              
-              <button type="submit">Enviar Inscrição</button>
-            </form>
+        <div class="contact-banner">
+            📧 Email: <strong>elvesalfredoarmindo@gmail.com</strong> &nbsp;|&nbsp; 📞 Phone: <strong>86 233 6053</strong>
+        </div>
+        
+        <div>
+            <br>
+            <a href="#course" class="btn btn-success">Secure Free Course Spot</a>
         </div>
     </section>
 
+    <!-- ABOUT THE INSTRUCTOR -->
+    <div class="container" id="about">
+        <div class="about-box">
+            <h2>About the Instructor & Guidelines</h2>
+            <p><strong>Instructor:</strong> Elves Alfredo Armindo</p>
+            <p><strong>Email:</strong> elvesalfredoarmindo@gmail.com | <strong>Phone:</strong> 86 233 6053</p>
+            <p style="margin-top: 1rem; margin-bottom: 1.5rem; color: var(--text-muted);">Digital Strategy Specialist focused on turning practical learning into real results for businesses and professionals.</p>
+            
+            <div class="grid" style="margin-top: 2rem;">
+                <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); padding: 1.8rem; border-radius: 10px;">
+                    <h3 style="color: var(--primary); margin-bottom: 0.8rem;">Mission</h3>
+                    <p style="color: var(--text-muted);">Democratize access to advanced digital marketing knowledge through a practical, accessible, and results-oriented methodology.</p>
+                </div>
+                <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); padding: 1.8rem; border-radius: 10px;">
+                    <h3 style="color: var(--primary); margin-bottom: 0.8rem;">Vision</h3>
+                    <p style="color: var(--text-muted);">To become a national reference in training professionals capable of leading the digital market with innovation and ethics.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); padding: 1.8rem; border-radius: 10px;">
+                <h3 style="color: var(--primary); margin-bottom: 0.8rem;">Objectives</h3>
+                <p><strong>General:</strong> Empower entrepreneurs, students, and professionals to create and execute efficient digital marketing strategies from scratch.</p>
+                <p style="margin-top: 0.8rem;"><strong>Specific:</strong></p>
+                <ul>
+                    <li>Teach the fundamental pillars of brand positioning on social media.</li>
+                    <li>Demonstrate practical techniques for client acquisition and organic/paid traffic.</li>
+                    <li>Provide tools and materials applicable to daily business operations.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- PORTFOLIO (4 PORTFOLIOS WITH INTERACTIVE DETAILS) -->
+    <div class="container" id="portfolio">
+        <h2>Created Projects Portfolio</h2>
+        <p style="text-align: center; margin-bottom: 2.5rem; color: var(--text-muted);">Discover 4 of the success cases and projects developed under the leadership of Instructor Elves Alfredo Armindo.</p>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <h3>Project 1: Sustainable Fashion E-commerce</h3>
+                    <p>Complete branding structuring, paid traffic on Meta Ads, and automated sales funnel that generated a 300% revenue increase in 3 months.</p>
+                </div>
+                <button class="btn" style="margin-top: 1.5rem; padding: 0.6rem 1rem; font-size: 0.9rem;" onclick="openPortfolioDetails('Project 1: Sustainable Fashion E-commerce', 'Detailed Case Study:\n\n• Challenge: Low online visibility and poor conversion rates on checkout.\n• Strategy Implemented: Redesigned visual identity, structured Meta Ads conversion campaigns, and implemented abandoned cart email flows.\n• Results: 300% revenue growth in 3 months and 4.5x ROAS.')">View Case Details</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Project 2: Positioning for Infoproducers</h3>
+                    <p>Visual identity creation, infoproduct launch, and seed launch strategy with conversion over 15% on the landing page.</p>
+                </div>
+                <button class="btn" style="margin-top: 1.5rem; padding: 0.6rem 1rem; font-size: 0.9rem;" onclick="openPortfolioDetails('Project 2: Positioning for Infoproducers', 'Detailed Case Study:\n\n• Challenge: Establishing high authority and trust for a first-time digital creator.\n• Strategy Implemented: Content authority funnel, high-impact landing page design, and strategic email sequences.\n• Results: Over 15% conversion rate on the landing page and 500+ active students enrolled.')">View Case Details</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Project 3: Local Traffic Campaign (B2B)</h3>
+                    <p>Campaign focused on Google Business Profile and geolocalized ads for service providers, multiplying qualified leads by 5x.</p>
+                </div>
+                <button class="btn" style="margin-top: 1.5rem; padding: 0.6rem 1rem; font-size: 0.9rem;" onclick="openPortfolioDetails('Project 3: Local Traffic Campaign (B2B)', 'Detailed Case Study:\n\n• Challenge: Attracting high-value local corporate clients for a B2B service agency.\n• Strategy Implemented: Google Ads Search campaigns combined with optimized Google Business Profile ranking.\n• Results: Multiplied qualified inbound leads by 5x within 60 days.')">View Case Details</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Project 4: Fitness Coach Authority Scale</h3>
+                    <p>Personal brand redesign, social media editorial calendar, and high-ticket consulting acquisition funnel.</p>
+                </div>
+                <button class="btn" style="margin-top: 1.5rem; padding: 0.6rem 1rem; font-size: 0.9rem;" onclick="openPortfolioDetails('Project 4: Fitness Coach Authority Scale', 'Detailed Case Study:\n\n• Challenge: Low pricing and difficulty scaling personal fitness coaching online.\n• Strategy Implemented: Shifted focus to high-ticket consulting, implemented daily short-form video strategy and WhatsApp closing funnels.\n• Results: Increased monthly revenue by 400% and booked out mentoring slots.')">View Case Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FREE COURSE & MODULES -->
+    <div class="container" id="course">
+        <h2>Free Course & Opening Schedule</h2>
+        <div class="grid" style="margin-bottom: 2rem;">
+            <div class="card" style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                <h3 style="font-size: 1.8rem; color: var(--text-main);">Digital Marketing Fundamentals: From Scratch to Your First Client</h3>
+                <p style="max-width: 700px; margin: 0.8rem auto 1.5rem; font-size: 1.1rem;">Complete video training to structure your online presence and scale your sales from zero. Includes an <strong>Official Completion Certificate</strong> signed by Instructor Elves Alfredo Armindo.</p>
+                <p style="margin: 1rem 0; font-size: 1.2rem; color: var(--accent);"><strong>Official Opening Date:</strong> November 20, 2026, at 5:00 PM</p>
+                <div style="color: var(--accent); font-weight: 800; font-size: 1.4rem; margin: 1.5rem 0;">100% FREE</div>
+            </div>
+        </div>
+
+        <!-- Course Modules -->
+        <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-main);">What You Will Learn (Syllabus)</h3>
+        <div class="grid" style="margin-bottom: 3rem;">
+            <div class="card">
+                <div>
+                    <h3>Module 1: Strategic Positioning</h3>
+                    <p>How to define your niche, understand target audience behavior, and build magnetic authority on social media.</p>
+                </div>
+                <button class="btn" style="margin-top: 1.5rem; padding: 0.6rem 1rem; font-size: 0.9rem;" onclick="openModuleDetails('Module 1: Strategic Positioning', 'Module 1 Syllabus:\n\n• Class 1: How to choose a highly profitable niche.\n• Class 2: Advanced target audience and persona mapping.\n• Class 3: Fundamental pillars of digital authority.\n• Support Material: PDF Guide + Positioning Checklist.')">View Module Details</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Module 2: Traffic & Attraction</h3>
+                    <p>Practical fundamentals of organic attraction and introduction to paid traffic to bring qualified clients every day.</p>
+                </div>
+                <button class="btn" style="margin-top: 1.5rem; padding: 0.6rem 1rem; font-size: 0.9rem;" onclick="openModuleDetails('Module 2: Traffic & Attraction', 'Module 2 Syllabus:\n\n• Class 1: Organic follower attraction strategies.\n• Class 2: Practical introduction to Paid Traffic (Meta Ads).\n• Class 3: High-converting creatives for views and clicks.\n• Support Material: Traffic Metrics Spreadsheet.')">View Module Details</button>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Module 3: The First Client in Practice</h3>
+                    <p>Step-by-step to structure your offer, close sales via chat, and scale your initial results online.</p>
+                </div>
+                <button class="btn" style="margin-top: 1.5rem; padding: 0.6rem 1rem; font-size: 0.9rem;" onclick="openModuleDetails('Module 3: The First Client in Practice', 'Module 3 Syllabus:\n\n• Class 1: How to structure your first irresistible offer.\n• Class 2: Validated sales scripts to close deals via WhatsApp.\n• Class 3: Steps to scale your initial online results.\n• Support Material: Sales Script & Chat Funnel.')">View Module Details</button>
+            </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center; padding: 2.5rem;">
+            <h3 style="margin-bottom: 0.5rem;">Secure Your Early Spot</h3>
+            <p style="margin-bottom: 1.5rem;">Fill in your details to receive the exclusive access link on November 20, 2026.</p>
+            <form onsubmit="event.preventDefault(); alert('Registration successful! See you on November 20.');">
+                <div class="form-group">
+                    <label for="name">Your Full Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Best Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="you@email.com" required>
+                </div>
+                <button type="submit" class="btn btn-success" style="width: 100%; margin-top: 1rem;">I Want to Join for Free</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SOCIAL GROWTH SECTION -->
+    <div class="container" id="followers">
+        <h2>Social Growth & Follower Booster</h2>
+        <p style="text-align: center; margin-bottom: 2.5rem; color: var(--text-muted);">Want to expand your online reach? Use our growth tool below to kickstart your audience acquisition strategy.</p>
+        
+        <div class="card" style="max-width: 600px; margin: 0 auto; padding: 2.5rem;">
+            <h3 style="text-align: center; color: var(--accent); margin-bottom: 1.5rem;">Growth Booster Tool</h3>
+            <form onsubmit="event.preventDefault(); alert('Campaign started successfully!');">
+                <div class="form-group">
+                    <label for="socialHandle">Social Media Handle / Username (e.g., @yourprofile)</label>
+                    <input type="text" id="socialHandle" class="form-control" placeholder="@username" required>
+                </div>
+                <div class="form-group">
+                    <label for="followerGoal">Select Target Follower Growth Goal</label>
+                    <select id="followerGoal" class="form-control">
+                        <option value="1000">1,000 Organic Followers Accelerator</option>
+                        <option value="5000">5,000 Targeted Followers Package</option>
+                        <option value="10000">10,000 Authority Growth Program</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success" style="width: 100%; margin-top: 1rem;">Start Follower Growth Campaign</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MARKETING MATERIALS STORE ($1 EACH) -->
+    <div class="container" id="store">
+        <h2>Marketing Materials Store</h2>
+        <p style="text-align: center; margin-bottom: 2.5rem; color: var(--text-muted);">Practical tools, guides, and templates for only <strong>$1.00</strong> each.</p>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <h3>1. Strategic Planning Guide</h3>
+                    <p>PDF step-by-step to organize marketing goals for the entire year.</p>
+                </div>
+                <div>
+                    <div class="price-store">$1.00</div>
+                    <button class="btn" style="width: 100%;" onclick="buyMaterial('Strategic Planning Guide')">Buy Material</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>2. Pack 100+ Social Media Arts</h3>
+                    <p>Editable Canva templates to streamline your daily content creation.</p>
+                </div>
+                <div>
+                    <div class="price-store">$1.00</div>
+                    <button class="btn" style="width: 100%;" onclick="buyMaterial('Pack 100+ Social Media Arts')">Buy Material</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>3. Metrics & KPIs Spreadsheet</h3>
+                    <p>Financial and performance control for paid traffic campaigns.</p>
+                </div>
+                <div>
+                    <div class="price-store">$1.00</div>
+                    <button class="btn" style="width: 100%;" onclick="buyMaterial('Metrics & KPIs Spreadsheet')">Buy Material</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>4. E-book: Copywriting for Beginners</h3>
+                    <p>Persuasive writing techniques to boost conversions in texts and videos.</p>
+                </div>
+                <div>
+                    <div class="price-store">$1.00</div>
+                    <button class="btn" style="width: 100%;" onclick="buyMaterial('E-book: Copywriting for Beginners')">Buy Material</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>5. Digital Launch Checklist</h3>
+                    <p>The exact roadmap so you don't miss any steps in your infoproduct launch.</p>
+                </div>
+                <div>
+                    <div class="price-store">$1.00</div>
+                    <button class="btn" style="width: 100%;" onclick="buyMaterial('Digital Launch Checklist')">Buy Material</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>6. WhatsApp Sales Script</h3>
+                    <p>Validated approaches to close sales professionally via chat.</p>
+                </div>
+                <div>
+                    <div class="price-store">$1.00</div>
+                    <button class="btn" style="width: 100%;" onclick="buyMaterial('WhatsApp Sales Script')">Buy Material</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>7. Practical Guide to Meta Ads</h3>
+                    <p>How to run your first profitable campaign on Facebook and Instagram from scratch.</p>
+                </div>
+                <div>
+                    <div class="price-store">$1.00</div>
+                    <button class="btn" style="width: 100%;" onclick="buyMaterial('Practical Guide to Meta Ads')">Buy Material</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>8. Practical Guide to Google Ads</h3>
+                    <p>Search network strategies to capture clients with immediate purchase intent.</p>
+                </div>
+                <div>
+                    <div class="price-store">$1.00</div>
+                    <button class="btn" style="width: 100%;" onclick="buyMaterial('Practical Guide to Google Ads')">Buy Material</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>9. Annual Editorial Calendar</h3>
+                    <p>Suggested themes and ready-made content to fill your feed all year round.</p>
+                </div>
+                <div>
+                    <div class="price-store">$1.00</div>
+                    <button class="btn" style="width: 100%;" onclick="buyMaterial('Annual Editorial Calendar')">Buy Material</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>10. Basic Visual Identity Manual</h3>
+                    <p>How to define professional color palettes and typography for your personal brand.</p>
+                </div>
+                <div>
+                    <div class="price-store">$1.00</div>
+                    <button class="btn" style="width: 100%;" onclick="buyMaterial('Basic Visual Identity Manual')">Buy Material</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>11. Sales Recovery Email Kit</h3>
+                    <p>Ready-to-use email sequence to rescue abandoned carts in your store.</p>
+                </div>
+                <div>
+                    <div class="price-store">$1.00</div>
+                    <button class="btn" style="width: 100%;" onclick="buyMaterial('Sales Recovery Email Kit')">Buy Material</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS SECTION -->
+    <div class="container" id="testimonials">
+        <h2>What Our Students Say</h2>
+        <p style="text-align: center; margin-bottom: 2.5rem; color: var(--text-muted);">Real feedback from entrepreneurs and professionals who transformed their results.</p>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p style="font-style: italic; margin-bottom: 1rem;">"The strategic positioning module completely changed how I look at my business. Instructor Elves makes complex digital marketing concepts extremely easy to apply!"</p>
+                </div>
+                <p style="font-weight: bold; color: var(--text-main); margin-top: 1rem;">— Sarah Jenkins, Entrepreneur</p>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p style="font-style: italic; margin-bottom: 1rem;">"The $1 store materials saved me countless hours. The WhatsApp sales script alone helped me close my first 3 high-ticket clients in a week."</p>
+                </div>
+                <p style="font-weight: bold; color: var(--text-main); margin-top: 1rem;">— Marcus Vance, Freelancer</p>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p style="font-style: italic; margin-bottom: 1rem;">"Clear, objective, and straight to the point. Best digital marketing workshop framework I've ever participated in!"</p>
+                </div>
+                <p style="font-weight: bold; color: var(--text-main); margin-top: 1rem;">— Beatriz Lima, Digital Marketer</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div class="container" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <p style="text-align: center; margin-bottom: 2.5rem; color: var(--text-muted);">Got questions? We have answers to help you get started smoothly.</p>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+                <h4>Is the course really 100% free?</h4>
+                <p>Yes! The complete workshop and video lessons starting on November 20, 2026, are completely free of charge, including an official completion certificate.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How do I receive the $1.00 store materials after purchase?</h4>
+                <p>As soon as your payment is processed through our secure checkout simulator, instant download links are sent directly to your registered email address.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do I need prior experience in marketing to join?</h4>
+                <p>Not at all! The course is designed to take students completely from scratch up to acquiring their very first online client.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How can I contact Instructor Elves Alfredo Armindo?</h4>
+                <p>You can reach out directly via email at elvesalfredoarmindo@gmail.com or phone at 86 233 6053.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE CHECKOUT DA LOJA -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <h3>Secure Checkout</h3>
+            <p id="modalItemName" style="font-weight: bold; font-size: 1.1rem; color: var(--text-main); margin-top: 0.5rem;"></p>
+            <div id="modalDescription" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem; text-align: left; background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);"></div>
+            <p style="margin-bottom: 1rem;">Total Price: <strong style="color: var(--accent); font-size: 1.2rem;">$1.00 USD</strong></p>
+
+            <form onsubmit="event.preventDefault(); alert('Payment processed successfully! Your download link has been sent to your email.'); closeModal('checkoutModal');" style="text-align: left;">
+                <div class="form-group">
+                    <label for="cardName">Cardholder Name</label>
+                    <input type="text" id="cardName" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" class="form-control" placeholder="4532 •••• •••• ••••" maxlength="19" required>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="cardExp">Expiry Date</label>
+                        <input type="text" id="cardExp" class="form-control" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="cardCvv">CVV</label>
+                        <input type="password" id="cardCvv" class="form-control" placeholder="123" maxlength="4" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success" style="width: 100%; margin-top: 0.5rem;">Pay $1.00 Securely</button>
+            </form>
+            <button class="btn close-btn" style="width: 100%; margin-top: 0.8rem;" onclick="closeModal('checkoutModal')">Cancel / Close</button>
+        </div>
+    </div>
+
+    <!-- MODAL DE DETALHES DOS MÓDULOS -->
+    <div class="modal" id="moduleModal">
+        <div class="modal-content" style="text-align: left; max-width: 500px;">
+            <h3 id="moduleModalTitle" style="color: var(--primary); margin-bottom: 1rem;">Module Details</h3>
+            <p id="moduleModalContent" style="color: var(--text-muted); white-space: pre-line; margin-bottom: 1.5rem; line-height: 1.6; background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);"></p>
+            <button class="btn" style="width: 100%; background: var(--primary);" onclick="closeModal('moduleModal')">Close</button>
+        </div>
+    </div>
+
+    <!-- MODAL DE DETALHES DO PORTEFÓLIO -->
+    <div class="modal" id="portfolioModal">
+        <div class="modal-content" style="text-align: left; max-width: 500px;">
+            <h3 id="portfolioModalTitle" style="color: var(--primary); margin-bottom: 1rem;">Portfolio Case Study</h3>
+            <p id="portfolioModalContent" style="color: var(--text-muted); white-space: pre-line; margin-bottom: 1.5rem; line-height: 1.6; background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);"></p>
+            <button class="btn" style="width: 100%; background: var(--primary);" onclick="closeModal('portfolioModal')">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>MarketingPro</h4>
+                <p>Empowering digital creators and entrepreneurs with elite strategies.</p>
+            </div>
+            <div>
+                <h4>Contact Info</h4>
+                <p>Email: elvesalfredoarmindo@gmail.com</p>
+                <p>Phone: 86 233 6053</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function buyMaterial(itemName) {
+            const modal = document.getElementById('checkoutModal');
+            const itemNameElem = document.getElementById('modalItemName');
+            const modalDescElem = document.getElementById('modalDescription');
+            
+            itemNameElem.innerText = itemName;
+            
+            let details = "Immediate digital access to high-quality material ready to apply to your business.";
+            
+            if(itemName.includes('Strategic Planning')) {
+                details = "Includes: Step-by-step PDF, annual goal spreadsheets, quarterly action schedules, and practical guidelines to structure your budget.";
+            } else if(itemName.includes('Pack 100+ Social Media Arts')) {
+                details = "Includes: Over 100 100% editable Canva templates, recommended color palettes, validated fonts, and ready-to-use captions.";
+            } else if(itemName.includes('Metrics & KPIs')) {
+                details = "Includes: Smart financial and performance tracking spreadsheet for paid traffic campaigns (ROAS, CPL, CTR).";
+            } else if(itemName.includes('Copywriting')) {
+                details = "Includes: Complete e-book with persuasive techniques (AIDA, PAS), applied mental triggers, and copywriting templates for ads and landing pages.";
+            } else if(itemName.includes('Digital Launch')) {
+                details = "Includes: The exact roadmap checklist so you don't miss any critical steps during your infoproduct launch.";
+            } else if(itemName.includes('WhatsApp Sales')) {
+                details = "Includes: Validated and tested approaches to overcome objections and close sales professionally through chat.";
+            } else if(itemName.includes('Meta Ads')) {
+                details = "Includes: Practical setup guide for Facebook and Instagram Ads Manager from scratch to advanced.";
+            } else if(itemName.includes('Google Ads')) {
+                details = "Includes: Search network strategies to capture clients with immediate purchase intent on Google.";
+            } else if(itemName.includes('Editorial Calendar')) {
+                details = "Includes: Suggested themes and planned content to fill your publishing feed all year round without creative block.";
+            } else if(itemName.includes('Visual Identity')) {
+                details = "Includes: Practical manual to define professional color palettes, typography, and visual alignment for your personal brand.";
+            } else if(itemName.includes('Sales Recovery')) {
+                details = "Includes: Ready-to-use email sequence to rescue abandoned carts and recover lost sales in your store.";
+            }
+
+            modalDescElem.innerText = details;
+            modal.style.display = 'flex';
+        }
+
+        function openModuleDetails(title, content) {
+            document.getElementById('moduleModalTitle').innerText = title;
+            document.getElementById('moduleModalContent').innerText = content;
+            document.getElementById('moduleModal').style.display = 'flex';
+        }
+
+        function openPortfolioDetails(title, content) {
+            document.getElementById('portfolioModalTitle').innerText = title;
+            document.getElementById('portfolioModalContent').innerText = content;
+            document.getElementById('portfolioModal').style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
 </body>
 </html>
